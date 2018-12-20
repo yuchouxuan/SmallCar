@@ -1,6 +1,6 @@
 #ifndef _RULER_H__
 #define _RULER_H__
-#define AVG 10
+#define AVG 9
 class ruler 
 {
     
