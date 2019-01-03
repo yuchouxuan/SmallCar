@@ -2,7 +2,7 @@
 #include "car.h"
 void Car::init()
 {
-    TCCR4B = TCCR4B & B11111000 | B00000100; 
+   // TCCR4B = TCCR4B & B11111000 | B00000100; 
     mot.init();
     fru.init(26,27,58000);
     ser.init();

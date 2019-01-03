@@ -13,10 +13,11 @@ class XRuler
 {
     
     private:
-    SoftwareSerial sf = SoftwareSerial(52,53);
+    SoftwareSerial sf = SoftwareSerial(152,153);
     SoftwareSerial ss=SoftwareSerial(RX01,TX01);
     int rx;
     int tx;
+    int getdis();
     public:
     XRuler();
     XRuler(int irx, int itx);

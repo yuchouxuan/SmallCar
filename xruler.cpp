@@ -14,7 +14,7 @@ XRuler::XRuler(int irx, int itx)
 }
 void XRuler::init()
 {   
-    ss  = SoftwareSerial(rx,tx);
+  ss  = SoftwareSerial(rx,tx);
 	sf.begin(9600);
 	ss.begin(9600);
     delay(1);    
@@ -22,25 +22,24 @@ void XRuler::init()
   ss.write(0X53);    //初始化,连续输出模式
   ss.write(0XF8);    //初始化,连续输出模式
 
-
 }
-
-int XRuler::mm()
+int XRuler::getdis()
 {
-   unsigned char i=0,sum=0;
-   uint16_t distance=0;
-  unsigned char re_Buf[11],counter=0;
+  unsigned char i=0,sum=0;
+   uint16_t distance=-1212;
+   unsigned char re_Buf[11],counter=0;
    unsigned char sign=0;
    byte data_Buf[3]={0};
-   ss.listen();  
+    ss.listen();
+    delay(50);
+
    while (ss.available()) {   
     re_Buf[counter]=(unsigned char)ss.read();
-    if(counter==0&&re_Buf[0]!=0x5A) return;      // 检查帧头         
+    if(counter==0&&re_Buf[0]!=0x5A) return distance;      // 检查帧头         
     counter++;       
     if(counter==8)                //接收到数据
     {    
-       counter=0;                 //重新赋值，准备下一帧数据的接收 
-       sign=1;
+      sign=1;
     }      
   }
 
@@ -55,12 +54,16 @@ int XRuler::mm()
           data_Buf[0]=re_Buf[4];
           data_Buf[1]=re_Buf[5];
           distance=data_Buf[0]<<8|data_Buf[1];
-       
-	      
-   }
+     }
   } 
-  sf.listen();
+
   return distance;
-
-
+}
+int XRuler::mm()
+{ 
+   int dis =  getdis();
+   while(dis == -1212) 
+   {dis =  getdis();}
+   sf.listen();
+   return dis;
 }
