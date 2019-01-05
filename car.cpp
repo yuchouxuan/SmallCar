@@ -4,7 +4,7 @@ void Car::init()
 {
     TCCR4B = TCCR4B & B11111000 | B00000100; 
     mot.init();
-    fru.init(26,27,58000);
+    fru.init(26,27,18000);
     ser.init();
     fruS.init();
 
@@ -26,7 +26,11 @@ void Car::setSpeed(int sp)
     
     int speed = getSpeed();
     if(sp * speed < 0 ) return;
-           
+
+    if(speed == -32767)
+    { mot.setSpeed(40*fx);return;}
+    
+
     int dsp = abs(sp) -abs(speed);
     
     if( dsp > 0   )
@@ -36,7 +40,7 @@ void Car::setSpeed(int sp)
         if((abs(dsp) > abs(sp)/2 ))
           {mot.setSpeed(80*fx);}
         if((abs(dsp) > abs(sp)*0.75))
-          {mot.setSpeed(150*fx);}
+          {mot.setSpeed(100*fx);}
       }
     else
     {
@@ -54,12 +58,12 @@ void Car::setFRAngle(int ag)
 {fruS.setAngle(ag);}
 
 int Car::Fmm()
-{return fru.mm_avg();}
+{return fru.mm_avg3();}
 
 int Car::getSpeed()
 {
     int x = SpeedNow();
-    if (x <= 5 && x >= -5)  return 0 ;
+    if (x <= 10 && x >= -10)  return 0 ;
     
     return x;
 
@@ -69,7 +73,12 @@ int Car::getSpeed()
 int Car::SpeedNow()
 {
     int sp1 = Fmm();
+    if(sp1 < 0)
+    {
+      return -32767;
+    }
     delay(50);
+    
     return sp1 -Fmm() ; 
 }
 
