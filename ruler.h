@@ -15,5 +15,6 @@ class ruler
     void init(int e, int t, int timeout);
     int mm();
     int mm_avg();
+    int mm_avg3();
 };
 #endif

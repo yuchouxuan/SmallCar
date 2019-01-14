@@ -44,9 +44,19 @@ int ruler::mm()
         digitalWrite(TrigPin, HIGH); 
         delayMicroseconds(10);
         digitalWrite(TrigPin, LOW); 
-        return  pulseIn(EchoPin, HIGH,TimeOut) / 5.8;
-}
+        
+		return  pulseIn(EchoPin, HIGH,TimeOut) / 5.8 -1;
+		
 
+}
+int ruler::mm_avg3()
+{
+	int dis[3] = {mm(),mm(),mm()};
+	long sum =dis[0] + dis[1]+dis[2];
+	sum -=min(dis[0],min(dis[1], dis[2]));
+	sum -=max(dis[0],max(dis[1],dis[2]));
+	return int(sum);
+}
 int ruler::mm_avg()
 {
 	int mms[AVG];
