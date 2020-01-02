@@ -1,0 +1,9 @@
+c:\users\雨愁轩\documents\visual studio 2015\Projects\cktx\cktx\bin\Debug\cktx.exe.config
+c:\users\雨愁轩\documents\visual studio 2015\Projects\cktx\cktx\bin\Debug\cktx.exe
+c:\users\雨愁轩\documents\visual studio 2015\Projects\cktx\cktx\bin\Debug\cktx.pdb
+c:\users\雨愁轩\documents\visual studio 2015\Projects\cktx\cktx\obj\Debug\cktx.csprojResolveAssemblyReference.cache
+c:\users\雨愁轩\documents\visual studio 2015\Projects\cktx\cktx\obj\Debug\cktx.Form1.resources
+c:\users\雨愁轩\documents\visual studio 2015\Projects\cktx\cktx\obj\Debug\cktx.Properties.Resources.resources
+c:\users\雨愁轩\documents\visual studio 2015\Projects\cktx\cktx\obj\Debug\cktx.csproj.GenerateResource.Cache
+c:\users\雨愁轩\documents\visual studio 2015\Projects\cktx\cktx\obj\Debug\cktx.exe
+c:\users\雨愁轩\documents\visual studio 2015\Projects\cktx\cktx\obj\Debug\cktx.pdb
