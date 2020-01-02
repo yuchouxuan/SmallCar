@@ -1,0 +1,1 @@
+g++ -o "/home/pi/fpga/out/tst.o" -Wl,--no-undefined -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack /home/pi/fpga/out/cur.o /home/pi/fpga/out/fpgaio.o /home/pi/fpga/out/main.o /home/pi/fpga/out/MainApp.o -lwiringPi -lcurses

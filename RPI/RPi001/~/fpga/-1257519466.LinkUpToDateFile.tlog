@@ -1,0 +1,1 @@
+g++ -o "/home/pi/fpga/d/source/repos/RPi001/RPi001/~/fpga/out/tst.out" -Wl,--no-undefined -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack "~/fpga\main.o" -lwiringPi

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+    <RemoteTarget>-1257519466;172.24.242.3 (username=, port=22, authentication=Password)</RemoteTarget>
+    <RemoteDebuggerWorkingDirectory>/home/pi/fpga/out/</RemoteDebuggerWorkingDirectory>
+    <DebuggerFlavor>LinuxDebugger</DebuggerFlavor>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Zero|ARM'">
+    <RemoteTarget>-2137728487;172.24.242.6 (username=, port=22, authentication=Password)</RemoteTarget>
+    <RemoteDebuggingTarget>-2137728487;172.24.242.6 (username=, port=22, authentication=Password)</RemoteDebuggingTarget>
+    <DebuggerFlavor>LinuxDebugger</DebuggerFlavor>
+    <RemoteDebugTarget>-2137728487;172.24.242.6 (username=, port=22, authentication=Password)</RemoteDebugTarget>
+    <DebugChildProcesses>false</DebugChildProcesses>
+    <EnablePrettyPrinting>true</EnablePrettyPrinting>
+    <RemoteDebuggerWorkingDirectory>/home/pi/fpga/out</RemoteDebuggerWorkingDirectory>
+  </PropertyGroup>
+</Project>

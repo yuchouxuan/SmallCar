@@ -1,0 +1,1 @@
+g++ -o "/home/pi/fpga/RPi001/d/source/repos/RPi001/RPi001/bin/ARM/Debug/RPi001.out" -Wl,--no-undefined -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack /home/pi/fpga/RPi001/d/source/repos/RPi001/RPi001/obj/ARM/Debug/main.o -lwiringPi

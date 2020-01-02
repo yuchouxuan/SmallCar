@@ -1,0 +1,11 @@
+﻿  正在清理远程项目目录
+  正在验证源
+  正在将源远程复制到“172.24.242.3”
+  正在验证体系结构
+  正在验证体系结构
+  正在启动远程生成
+  正在编译源:
+  main.cpp
+  正在链接对象
+  RPi001.vcxproj -> d:\source\repos\RPi001\RPi001\bin\ARM\Debug\RPi001.out
+  正在调用“gpio export 17 out”，工作目录:“/home/pi/fpga/RPi001/d/source/repos/RPi001/RPi001/”
